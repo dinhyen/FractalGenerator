@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D809A1CC-5184-4108-9F3B-E0728DBCF7F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FractalGenerator</RootNamespace>
+    <AssemblyName>FractalGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>http://localhost/FractalGenerator/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fractal.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="code\BitmapCanvas.cs" />
+    <Compile Include="code\Commands.cs" />
+    <Compile Include="code\DrawingVisualCanvas.cs" />
+    <Compile Include="code\Mandelbrot.cs" />
+    <Compile Include="code\Map.cs" />
+    <Compile Include="MyApp.xaml.cs">
+      <DependentUpon>MyApp.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="code\Complex.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MyApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="maps\altern.map" />
+    <Resource Include="maps\blues.map" />
+    <Resource Include="maps\chroma.map" />
+    <Resource Include="maps\default.map" />
+    <Resource Include="maps\defaulti.map" />
+    <Resource Include="maps\defaultw.map" />
+    <Resource Include="maps\firestrm.map" />
+    <Resource Include="maps\froth3.map" />
+    <Resource Include="maps\froth316.map" />
+    <Resource Include="maps\froth6.map" />
+    <Resource Include="maps\froth616.map" />
+    <Resource Include="maps\gamma1.map" />
+    <Resource Include="maps\gamma2.map" />
+    <Resource Include="maps\glasses1.map" />
+    <Resource Include="maps\glasses2.map" />
+    <Resource Include="maps\glasses5.map" />
+    <Resource Include="maps\goodega.map" />
+    <Resource Include="maps\green.map" />
+    <Resource Include="maps\grey.map" />
+    <Resource Include="maps\grid.map" />
+    <Resource Include="maps\headache.map" />
+    <Resource Include="maps\landscap.map" />
+    <Resource Include="maps\lyapunov.map" />
+    <Resource Include="maps\neon.map" />
+    <Resource Include="maps\paintjet.map" />
+    <Resource Include="maps\royal.map" />
+    <Resource Include="maps\topo.map" />
+    <Resource Include="maps\volcano.map" />
+    <Resource Include="maps\110col.map" />
+    <Resource Include="maps\160sel.map" />
+    <Resource Include="maps\560sel.map" />
+    <Resource Include="maps\aj.map" />
+    <Resource Include="maps\ajax.map" />
+    <Resource Include="maps\anenome.map" />
+    <Resource Include="maps\aqa.map" />
+    <Resource Include="maps\army.map" />
+    <Resource Include="maps\autumn.map" />
+    <Resource Include="maps\autumn2.map" />
+    <Resource Include="maps\baby.map" />
+    <Resource Include="maps\bbb.map" />
+    <Resource Include="maps\bbr001.map" />
+    <Resource Include="maps\bears.map" />
+    <Resource Include="maps\blakwhit.map" />
+    <Resource Include="maps\blakwht.map" />
+    <Resource Include="maps\blend.map" />
+    <Resource Include="maps\blend2.map" />
+    <Resource Include="maps\blendfff.map" />
+    <Resource Include="maps\blengbyg.map" />
+    <Resource Include="maps\border.map" />
+    <Resource Include="maps\bug1.map" />
+    <Resource Include="maps\carr238.map" />
+    <Resource Include="maps\carr254.map" />
+    <Resource Include="maps\carr256.map" />
+    <Resource Include="maps\carr257.map" />
+    <Resource Include="maps\carr358.map" />
+    <Resource Include="maps\carr389.map" />
+    <Resource Include="maps\carr393.map" />
+    <Resource Include="maps\carr401.map" />
+    <Resource Include="maps\cat.map" />
+    <Resource Include="maps\cranes.map" />
+    <Resource Include="maps\cycler.map" />
+    <Resource Include="maps\darkblue.map" />
+    <Resource Include="maps\darkie.map" />
+    <Resource Include="maps\dismal.map" />
+    <Resource Include="maps\droz60.map" />
+    <Resource Include="maps\fish.map" />
+    <Resource Include="maps\frcoast.map" />
+    <Resource Include="maps\fungus.map" />
+    <Resource Include="maps\garden.map" />
+    <Resource Include="maps\gm5.map" />
+    <Resource Include="maps\golf.map" />
+    <Resource Include="maps\haystack.map" />
+    <Resource Include="maps\hls10.map" />
+    <Resource Include="maps\hls12.map" />
+    <Resource Include="maps\hls15.map" />
+    <Resource Include="maps\hls19.map" />
+    <Resource Include="maps\hls20.map" />
+    <Resource Include="maps\hls9.map" />
+    <Resource Include="maps\hlsrain1.map" />
+    <Resource Include="maps\hlsrain2.map" />
+    <Resource Include="maps\hlsrain3.map" />
+    <Resource Include="maps\hlsrain4.map" />
+    <Resource Include="maps\hlsrain5.map" />
+    <Resource Include="maps\hlsrainb.map" />
+    <Resource Include="maps\hunk.map" />
+    <Resource Include="maps\janine.map" />
+    <Resource Include="maps\jellyfsh.map" />
+    <Resource Include="maps\jowe4741.map" />
+    <Resource Include="maps\magician.map" />
+    <Resource Include="maps\man_.map" />
+    <Resource Include="maps\masts.map" />
+    <Resource Include="maps\med.map" />
+    <Resource Include="maps\monk.map" />
+    <Resource Include="maps\nkohala.map" />
+    <Resource Include="maps\olympus.map" />
+    <Resource Include="maps\panda.map" />
+    <Resource Include="maps\polo.map" />
+    <Resource Include="maps\popsicle.map" />
+    <Resource Include="maps\porche01.map" />
+    <Resource Include="maps\raf.map" />
+    <Resource Include="maps\rainb.map" />
+    <Resource Include="maps\rainbow6.map" />
+    <Resource Include="maps\ribbon.map" />
+    <Resource Include="maps\room.map" />
+    <Resource Include="maps\roygbv.map" />
+    <Resource Include="maps\rugby2.map" />
+    <Resource Include="maps\seattle.map" />
+    <Resource Include="maps\sgg007.map" />
+    <Resource Include="maps\sgg008.map" />
+    <Resource Include="maps\sgg043.map" />
+    <Resource Include="maps\sgg048.map" />
+    <Resource Include="maps\sgg100.map" />
+    <Resource Include="maps\skydye06.map" />
+    <Resource Include="maps\snowtree.map" />
+    <Resource Include="maps\sparse.map" />
+    <Resource Include="maps\special.map" />
+    <Resource Include="maps\special2.map" />
+    <Resource Include="maps\star.map" />
+    <Resource Include="maps\std256.map" />
+    <Resource Include="maps\steptoe.map" />
+    <Resource Include="maps\stripe.map" />
+    <Resource Include="maps\stripe2.map" />
+    <Resource Include="maps\stripe3.map" />
+    <Resource Include="maps\sweater.map" />
+    <Resource Include="maps\sweater2.map" />
+    <Resource Include="maps\t1map2.map" />
+    <Resource Include="maps\t2map1.map" />
+    <Resource Include="maps\t2map4.map" />
+    <Resource Include="maps\ten.map" />
+    <Resource Include="maps\trace4.map" />
+    <Resource Include="maps\trmoe8.map" />
+    <Resource Include="maps\unknown.map" />
+    <Resource Include="maps\vette63.map" />
+    <Resource Include="maps\violet.map" />
+    <Resource Include="maps\violet2.map" />
+    <Resource Include="maps\volcano4.map" />
+    <Resource Include="maps\volcano5.map" />
+    <Resource Include="maps\vooon.map" />
+    <Resource Include="maps\vortex.map" />
+    <Resource Include="maps\whiteblk.map" />
+    <Resource Include="maps\windsrf2.map" />
+    <Resource Include="maps\windsurf.map" />
+    <Resource Include="maps\xeres.map" />
+    <Resource Include="maps\yools.map" />
+    <Resource Include="maps\zebra.map" />
+    <Resource Include="maps\znew.map" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fractal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,186 @@
+﻿<Window x:Class="FractalGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:custom="clr-namespace:FractalGenerator"
+        Title="Fractal Generator" Height="810" Width="710">
+    <Window.CommandBindings>
+        <CommandBinding Command="Close" CanExecute="CanExecuteCloseCommand" Executed="ExecutedCloseCommand" />
+        <CommandBinding Command="Help" CanExecute="CanExecuteHelpCommand" Executed="ExecutedHelpCommand" />
+        <CommandBinding Command="{x:Static custom:Commands.ResetZoomCommand}" CanExecute="CanExecuteResetZoomCommand" Executed="ExecutedResetZoomCommand" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="Close" Modifiers="Alt" Key="X" />
+    </Window.InputBindings>
+    <DockPanel x:Name="dockPanel">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="E_xit" Command="Close" InputGestureText="Alt+X"/>
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem x:Name="menuResetZoom" Header="_Reset" Command="{x:Static custom:Commands.ResetZoomCommand}" />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About Fractal Generator..." Command="Help" />
+            </MenuItem>
+        </Menu>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Margin="5">
+                Select map:
+            </TextBlock>
+            <ComboBox x:Name="ddlMap" Width="200" Margin="5" SelectionChanged="OnSelectingMap">
+                <ComboBoxItem>110col.map</ComboBoxItem>
+                <ComboBoxItem>160sel.map</ComboBoxItem>
+                <ComboBoxItem>560sel.map</ComboBoxItem>
+                <ComboBoxItem>aj.map</ComboBoxItem>
+                <ComboBoxItem>ajax.map</ComboBoxItem>
+                <ComboBoxItem>altern.map</ComboBoxItem>
+                <ComboBoxItem>anenome.map</ComboBoxItem>
+                <ComboBoxItem>aqa.map</ComboBoxItem>
+                <ComboBoxItem>army.map</ComboBoxItem>
+                <ComboBoxItem>autumn.map</ComboBoxItem>
+                <ComboBoxItem>autumn2.map</ComboBoxItem>
+                <ComboBoxItem>baby.map</ComboBoxItem>
+                <ComboBoxItem>bbb.map</ComboBoxItem>
+                <ComboBoxItem>bbr001.map</ComboBoxItem>
+                <ComboBoxItem>bears.map</ComboBoxItem>
+                <ComboBoxItem>blakwhit.map</ComboBoxItem>
+                <ComboBoxItem>blakwht.map</ComboBoxItem>
+                <ComboBoxItem>blend.map</ComboBoxItem>
+                <ComboBoxItem>blend2.map</ComboBoxItem>
+                <ComboBoxItem>blendfff.map</ComboBoxItem>
+                <ComboBoxItem>blengbyg.map</ComboBoxItem>
+                <ComboBoxItem>blues.map</ComboBoxItem>
+                <ComboBoxItem>border.map</ComboBoxItem>
+                <ComboBoxItem>bug1.map</ComboBoxItem>
+                <ComboBoxItem>carr238.map</ComboBoxItem>
+                <ComboBoxItem>carr254.map</ComboBoxItem>
+                <ComboBoxItem>carr256.map</ComboBoxItem>
+                <ComboBoxItem>carr257.map</ComboBoxItem>
+                <ComboBoxItem>carr358.map</ComboBoxItem>
+                <ComboBoxItem>carr389.map</ComboBoxItem>
+                <ComboBoxItem>carr393.map</ComboBoxItem>
+                <ComboBoxItem>carr401.map</ComboBoxItem>
+                <ComboBoxItem>cat.map</ComboBoxItem>
+                <ComboBoxItem>chroma.map</ComboBoxItem>
+                <ComboBoxItem>cranes.map</ComboBoxItem>
+                <ComboBoxItem>cycler.map</ComboBoxItem>
+                <ComboBoxItem>darkblue.map</ComboBoxItem>
+                <ComboBoxItem>darkie.map</ComboBoxItem>
+                <ComboBoxItem>default.map</ComboBoxItem>
+                <ComboBoxItem>defaulti.map</ComboBoxItem>
+                <ComboBoxItem>defaultw.map</ComboBoxItem>
+                <ComboBoxItem>dismal.map</ComboBoxItem>
+                <ComboBoxItem>droz60.map</ComboBoxItem>
+                <ComboBoxItem>firestrm.map</ComboBoxItem>
+                <ComboBoxItem>fish.map</ComboBoxItem>
+                <ComboBoxItem>frcoast.map</ComboBoxItem>
+                <ComboBoxItem>froth3.map</ComboBoxItem>
+                <ComboBoxItem>froth316.map</ComboBoxItem>
+                <ComboBoxItem>froth6.map</ComboBoxItem>
+                <ComboBoxItem>froth616.map</ComboBoxItem>
+                <ComboBoxItem>fungus.map</ComboBoxItem>
+                <ComboBoxItem>gamma1.map</ComboBoxItem>
+                <ComboBoxItem>gamma2.map</ComboBoxItem>
+                <ComboBoxItem>garden.map</ComboBoxItem>
+                <ComboBoxItem>glasses1.map</ComboBoxItem>
+                <ComboBoxItem>glasses2.map</ComboBoxItem>
+                <ComboBoxItem>glasses5.map</ComboBoxItem>
+                <ComboBoxItem>gm5.map</ComboBoxItem>
+                <ComboBoxItem>golf.map</ComboBoxItem>
+                <ComboBoxItem>goodega.map</ComboBoxItem>
+                <ComboBoxItem>green.map</ComboBoxItem>
+                <ComboBoxItem>grey.map</ComboBoxItem>
+                <ComboBoxItem>grid.map</ComboBoxItem>
+                <ComboBoxItem>haystack.map</ComboBoxItem>
+                <ComboBoxItem>headache.map</ComboBoxItem>
+                <ComboBoxItem>hls10.map</ComboBoxItem>
+                <ComboBoxItem>hls12.map</ComboBoxItem>
+                <ComboBoxItem>hls15.map</ComboBoxItem>
+                <ComboBoxItem>hls19.map</ComboBoxItem>
+                <ComboBoxItem>hls20.map</ComboBoxItem>
+                <ComboBoxItem>hls9.map</ComboBoxItem>
+                <ComboBoxItem>hlsrain1.map</ComboBoxItem>
+                <ComboBoxItem>hlsrain2.map</ComboBoxItem>
+                <ComboBoxItem>hlsrain3.map</ComboBoxItem>
+                <ComboBoxItem>hlsrain4.map</ComboBoxItem>
+                <ComboBoxItem>hlsrain5.map</ComboBoxItem>
+                <ComboBoxItem>hlsrainb.map</ComboBoxItem>
+                <ComboBoxItem>hunk.map</ComboBoxItem>
+                <ComboBoxItem>janine.map</ComboBoxItem>
+                <ComboBoxItem>jellyfsh.map</ComboBoxItem>
+                <ComboBoxItem>jowe4741.map</ComboBoxItem>
+                <ComboBoxItem>landscap.map</ComboBoxItem>
+                <ComboBoxItem>lyapunov.map</ComboBoxItem>
+                <ComboBoxItem>magician.map</ComboBoxItem>
+                <ComboBoxItem>man_.map</ComboBoxItem>
+                <ComboBoxItem>masts.map</ComboBoxItem>
+                <ComboBoxItem>med.map</ComboBoxItem>
+                <ComboBoxItem>monk.map</ComboBoxItem>
+                <ComboBoxItem>neon.map</ComboBoxItem>
+                <ComboBoxItem>nkohala.map</ComboBoxItem>
+                <ComboBoxItem>olympus.map</ComboBoxItem>
+                <ComboBoxItem>paintjet.map</ComboBoxItem>
+                <ComboBoxItem>panda.map</ComboBoxItem>
+                <ComboBoxItem>polo.map</ComboBoxItem>
+                <ComboBoxItem>popsicle.map</ComboBoxItem>
+                <ComboBoxItem>porche01.map</ComboBoxItem>
+                <ComboBoxItem>raf.map</ComboBoxItem>
+                <ComboBoxItem>rainb.map</ComboBoxItem>
+                <ComboBoxItem>rainbow6.map</ComboBoxItem>
+                <ComboBoxItem>ribbon.map</ComboBoxItem>
+                <ComboBoxItem>room.map</ComboBoxItem>
+                <ComboBoxItem>royal.map</ComboBoxItem>
+                <ComboBoxItem>roygbv.map</ComboBoxItem>
+                <ComboBoxItem>rugby2.map</ComboBoxItem>
+                <ComboBoxItem>seattle.map</ComboBoxItem>
+                <ComboBoxItem>sgg007.map</ComboBoxItem>
+                <ComboBoxItem>sgg008.map</ComboBoxItem>
+                <ComboBoxItem>sgg043.map</ComboBoxItem>
+                <ComboBoxItem>sgg048.map</ComboBoxItem>
+                <ComboBoxItem>sgg100.map</ComboBoxItem>
+                <ComboBoxItem>skydye06.map</ComboBoxItem>
+                <ComboBoxItem>snowtree.map</ComboBoxItem>
+                <ComboBoxItem>sparse.map</ComboBoxItem>
+                <ComboBoxItem>special.map</ComboBoxItem>
+                <ComboBoxItem>special2.map</ComboBoxItem>
+                <ComboBoxItem>star.map</ComboBoxItem>
+                <ComboBoxItem>std256.map</ComboBoxItem>
+                <ComboBoxItem>steptoe.map</ComboBoxItem>
+                <ComboBoxItem>stripe.map</ComboBoxItem>
+                <ComboBoxItem>stripe2.map</ComboBoxItem>
+                <ComboBoxItem>stripe3.map</ComboBoxItem>
+                <ComboBoxItem>sweater.map</ComboBoxItem>
+                <ComboBoxItem>sweater2.map</ComboBoxItem>
+                <ComboBoxItem>t1map2.map</ComboBoxItem>
+                <ComboBoxItem>t2map1.map</ComboBoxItem>
+                <ComboBoxItem>t2map4.map</ComboBoxItem>
+                <ComboBoxItem>ten.map</ComboBoxItem>
+                <ComboBoxItem>topo.map</ComboBoxItem>
+                <ComboBoxItem>trace4.map</ComboBoxItem>
+                <ComboBoxItem>trmoe8.map</ComboBoxItem>
+                <ComboBoxItem>unknown.map</ComboBoxItem>
+                <ComboBoxItem>vette63.map</ComboBoxItem>
+                <ComboBoxItem>violet.map</ComboBoxItem>
+                <ComboBoxItem>violet2.map</ComboBoxItem>
+                <ComboBoxItem>volcano.map</ComboBoxItem>
+                <ComboBoxItem>volcano4.map</ComboBoxItem>
+                <ComboBoxItem>volcano5.map</ComboBoxItem>
+                <ComboBoxItem>vooon.map</ComboBoxItem>
+                <ComboBoxItem>vortex.map</ComboBoxItem>
+                <ComboBoxItem>whiteblk.map</ComboBoxItem>
+                <ComboBoxItem>windsrf2.map</ComboBoxItem>
+                <ComboBoxItem>windsurf.map</ComboBoxItem>
+                <ComboBoxItem>xeres.map</ComboBoxItem>
+                <ComboBoxItem>yools.map</ComboBoxItem>
+                <ComboBoxItem>zebra.map</ComboBoxItem>
+                <ComboBoxItem>znew.map</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <!--<Button DockPanel.Dock="Top" x:Name="btnRefresh" Content="Refresh drawing visual" Click="OnRefreshDrawingVisual" Width="250"/>-->
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="txtStatus" />
+            </StatusBarItem>
+        </StatusBar>
+    </DockPanel>
+</Window>

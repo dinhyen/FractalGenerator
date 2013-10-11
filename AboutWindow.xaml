@@ -1,0 +1,12 @@
+﻿<Window x:Class="FractalGenerator.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About Fractal Generator" Height="406" Width="509" WindowStyle="ThreeDBorderWindow" ShowInTaskbar="False" SizeToContent="Manual" IsEnabled="True" ResizeMode="NoResize" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center">
+    <StackPanel>
+        <Image HorizontalAlignment="Left" Name="image1" Stretch="Fill" VerticalAlignment="Top" Source="/FractalGenerator;component/images/Splash.png"/>
+        <TextBlock TextAlignment="Center">
+            <Run>Fractal Generator</Run>
+        </TextBlock>
+        <Button Content="OK" Height="23" x:Name="btnOk" Width="75" Margin="10" Click="OnOkClick" IsDefault="True" />
+    </StackPanel>
+</Window>
